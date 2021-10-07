@@ -64,7 +64,7 @@ function createTable() {
 }
 
 function manageError(tag, className, text) {
-    modal.classList.add('modal-hidden');
+    //modal.classList.add('modal-hidden');
 
     if(!document.querySelector('.error')) {
         let error = createElem(tag, className, text);
@@ -136,9 +136,9 @@ function removeTable() {
 btnCreate.addEventListener('click', function() {
     modal.classList.remove('modal-hidden');
 
-    btnYes.addEventListener('click', function () {
-        table = createTable();
-    });
+    // btnYes.addEventListener('click', function () {
+    //     table = createTable();
+    // });
 
     btnNo.addEventListener('click', function () {
         modal.classList.add('modal-hidden');
@@ -146,6 +146,7 @@ btnCreate.addEventListener('click', function() {
 
     document.addEventListener('keydown', function(event) {
         if(event.key == "Enter") {
+            modal.classList.add("modal-hidden");
             table = createTable();
         }
         if(event.key == "Escape") {
